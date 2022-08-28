@@ -6,7 +6,11 @@ Damage_type1 = ["perfurante","concussão","cortante"]
 Damage_type2 = ["concussão-perfurante","cortante-perfurante"]
 
 while( Damage_class != "x"):
-
+    print()
+    print("perfurante","concussão","cortante")
+    print()
+    print("concussão-perfurante","cortante-perfurante")
+    print()
     Damage_class = str.lower(input("Tipo de dano: "))
     
     if(Damage_class in Damage_type1):
@@ -26,4 +30,4 @@ while( Damage_class != "x"):
     damage_result = (damage // (1.2)) + DES
     print("Dano: ", damage_result)
 
-    Damage_class = str.lower(input("digite x para fechar "))
+    Damage_class = str.lower(input("digite x para fechar, se quiser continuar rolando, aperte qualquer tecla "))
