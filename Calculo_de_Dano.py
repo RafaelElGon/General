@@ -34,7 +34,7 @@ while( Damage_class != "x"):
 
     if(Weapon_class not in Weapon_type):
         while (Weapon_class not in Weapon_type):
-            Weapon_class = str.lower(input("Tipo de classe informada não corresponde, tente novamente: "))
+            Weapon_class = str.upper(input("Tipo de classe informada não corresponde, tente novamente: "))
 
     for i in range(len(Weapon_type)):
         if(Weapon_class in Weapon_type[i]):
