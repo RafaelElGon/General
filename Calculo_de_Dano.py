@@ -22,12 +22,12 @@ while( Damage_class != "x"):
             Damage_class = str.lower(input("Tipo de dano informado não corresponde, tente novamente: "))
 
     if(Damage_class in Damage_type1):
-        d8 = 8
-        dice_result = random.randint(1,d8)
+        d8 = random.randint(1,8)
+        dice_result = d8
         print("Resultado do d8 > ",dice_result)
     elif(Damage_class in Damage_type2):
-        d12 = 12
-        dice_result = random.randint(1,d12)
+        d12 = random.randint(1,12)
+        dice_result = d12
         print("Resultado do d12 > ",dice_result)
     
     print()
@@ -38,14 +38,15 @@ while( Damage_class != "x"):
     if(Weapon_class not in Weapon_type):
         while (Weapon_class not in Weapon_type):
             Weapon_class = str.upper(input("Tipo de classe informada não corresponde, tente novamente: "))
-
-    for i in range(len(Weapon_type)):
-        if(Weapon_class in Weapon_type[i]):
-            d4 = random.randint(1,4)
-            print("Resultado do d4 > ",d4)
     
-    DES = int(input("Modificador de destreza: "))
-    FOR = int(input("Modificador de força: "))
+    if(Weapon_class != "MDR"):
+        for i in range(len(Weapon_type)):
+            if(Weapon_class in Weapon_type[i]):
+                d4 = random.randint(1,4)
+                print("Resultado do d4 > ",d4)
+    
+    DES = int(input("Atributo de destreza: "))
+    FOR = int(input("Atributo de força: "))
 
     if(Weapon_class == "DES"):
         damage = ((dice_result + DES + d4) // 1.2) - FOR
