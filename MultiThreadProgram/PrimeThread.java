@@ -1,17 +1,12 @@
 public class PrimeThread extends Thread{
-    private int taskId;
-    private int sleepTime = 5000;
+    private int taskID;
 
-    public PrimeThread(int taskId) {
-        this.taskId = taskId;
+    public PrimeThread(int taskID) {
+        this.taskId = taskID;
     }
     @Override
     public void run() {
-        VerificaNumerosPrimos.test(taskId);
-        try { 
-            PrimeThread.sleep(sleepTime); 
-        } catch (InterruptedException e) {
-        }
-        System.out.println(Thread.currentThread().getName() + " executando tarefa " + taskId);
+        VerificaNumerosPrimos.test(taskID);
+        System.out.println("Thread: " + Thread.currentThread().getName() + ", executando tarefa: " + taskID);
     }
 }
