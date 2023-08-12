@@ -1,4 +1,4 @@
-public class PrimeThread extends Thread implements Runnable{
+public class PrimeThread extends Thread{
     private int taskId;
 
     public PrimeThread(int taskId) {
@@ -8,6 +8,10 @@ public class PrimeThread extends Thread implements Runnable{
     public void run() {
         VerificaNumerosPrimos.test(taskId);
         System.out.println(Thread.currentThread().getName() + " executando tarefa " + taskId);
-        try { Thread.sleep(5000); } catch (InterruptedException ie) { }
+        try { 
+            PrimeThread.sleep(5000); 
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
