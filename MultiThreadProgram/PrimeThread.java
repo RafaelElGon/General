@@ -1,7 +1,7 @@
-public class PrimoThread extends Thread implements Runnable{
+public class PrimeThread extends Thread implements Runnable{
     private int taskId;
 
-    public PrimoThread(int taskId) {
+    public PrimeThread(int taskId) {
         this.taskId = taskId;
     }
     @Override
