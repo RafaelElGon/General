@@ -1,5 +1,6 @@
 public class PrimeThread extends Thread{
     private int taskId;
+    private int sleepTime = 5000;
 
     public PrimeThread(int taskId) {
         this.taskId = taskId;
@@ -7,11 +8,10 @@ public class PrimeThread extends Thread{
     @Override
     public void run() {
         VerificaNumerosPrimos.test(taskId);
-        System.out.println(Thread.currentThread().getName() + " executando tarefa " + taskId);
         try { 
-            PrimeThread.sleep(5000); 
+            PrimeThread.sleep(sleepTime); 
         } catch (InterruptedException e) {
-            e.printStackTrace();
         }
+        System.out.println(Thread.currentThread().getName() + " executando tarefa " + taskId);
     }
 }
