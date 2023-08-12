@@ -3,9 +3,7 @@ public class PrimoMain {
         for(int i = 0; i<args.length; i++){
             PrimoThread t = new PrimoThread();
             int param = Integer.parseInt(args[i]);
-
             t.run(param);
-            System.out.println("Thread ID: " + t.getId());
         }
     }
 }
